@@ -21,3 +21,11 @@ for key in even.keys():
         print("Source dictionary does contain key %s" % key)
     else:
         print("Source dictionary doesn't contain key %s" % key)
+
+# Sort dictionary for alphabet order
+dictionaryKeysList = list(dic.keys())
+dictionaryKeysList.sort()
+print(dictionaryKeysList)
+
+for key in dictionaryKeysList:
+    print(":".join((key, str(dic[key]))))
