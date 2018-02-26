@@ -16,3 +16,12 @@ if x > y:
     print("x > y")
 else:
     print("x < y")
+
+# Assignment Operators
+z1 = x - y
+x -= y
+
+if (x == z1):
+    print("same values")
+else:
+    print("different values")
