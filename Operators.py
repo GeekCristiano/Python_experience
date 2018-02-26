@@ -10,3 +10,9 @@ print(x * y)
 print(y % x)
 print(y % y)
 print(x % y)
+
+# Comparison Operators
+if x > y:
+    print("x > y")
+else:
+    print("x < y")
