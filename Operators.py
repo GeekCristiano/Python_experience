@@ -25,3 +25,14 @@ if (x == z1):
     print("same values")
 else:
     print("different values")
+
+# Logical operators
+
+t = True
+f = False
+
+print(("t is f", t is f))
+print(("t is not f", t is not f))
+print(("t and f is", t and f))
+print(("t or f is", t or f))
+print(("not f is", not f))
