@@ -1,6 +1,7 @@
 # Let's study how different operators work in the python
 
 # A few simple arithmetic operators
+
 x = 3
 y = 5
 print(x - y)
@@ -36,3 +37,12 @@ print(("t is not f", t is not f))
 print(("t and f is", t and f))
 print(("t or f is", t or f))
 print(("not f is", not f))
+
+# Membership Operators
+
+str = "I love python <3 ! And python loves me too)"
+
+if "l" in str:
+    print(str.index('l'))
+else:
+    print("The string does not contain a character \"l\"")
