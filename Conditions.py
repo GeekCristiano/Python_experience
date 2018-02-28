@@ -8,6 +8,13 @@ def comparenumbers(x, y):
     else:
         print("Second argument is greater than first.")
 
+
 comparenumbers(5, 4)
 comparenumbers(3, 7)
 comparenumbers(2, 2)
+
+# without using function
+x = 6
+y = 4
+
+print("x is greater than y" if (x>y) else "x is greater than y")
