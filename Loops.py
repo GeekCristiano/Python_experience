@@ -35,7 +35,6 @@ print(get_even_numbers(numbers))
 
 
 # using break statements
-
 def find_first_even_number(numbers):
     even_number = -1
     for n in numbers:
@@ -44,4 +43,12 @@ def find_first_even_number(numbers):
             break
     return even_number
 
+
 print(find_first_even_number(numbers))
+
+# using continue statements
+
+for n in range(12, 17):
+    if n % 3 != 0:
+        continue
+    print(n)
