@@ -1,3 +1,9 @@
 # Let's study how work with loops in python
 
-# soon there will be a code
+# while loop example
+
+x = 5
+
+while x < 8:
+    print(x)
+    x += 1
