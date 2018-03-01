@@ -52,3 +52,12 @@ for n in range(12, 17):
     if n % 3 != 0:
         continue
     print(n)
+
+# using enumerate function for "for loop"
+quart = ["Jan", "Feb", "Mar", "Apr"]
+months = {}
+
+for index, value in enumerate(quart):
+    months[index] = value
+
+print(months)
