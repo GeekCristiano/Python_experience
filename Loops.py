@@ -30,5 +30,18 @@ def get_even_numbers(numbers):
     return even_numbers
 
 
-numbers = [0, -17, 4, 17, 6, 9]
+numbers = [9, -17, 4, 17, 6, 9]
 print(get_even_numbers(numbers))
+
+
+# using break statements
+
+def find_first_even_number(numbers):
+    even_number = -1
+    for n in numbers:
+        if n % 2 == 0:
+            even_number = n
+            break
+    return even_number
+
+print(find_first_even_number(numbers))
