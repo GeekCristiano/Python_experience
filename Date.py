@@ -26,6 +26,14 @@ print("Current minute is:", now.minute)
 print("Current second is:", now.second)
 
 # date formatting
-# [(%y/%Y – Year), (%a/%A- weekday), (%b/%B- month), (%d - day of month)] .
 
+# [(%y/%Y – Year), (%a/%A- weekday), (%b/%B- month), (%d - day of month)] .
 print("Current datetime is:", now.strftime("%d %B %Y, %a"))
+
+# %C- indicates the local date and time, %x- indicates the local date, %X- indicates the local time
+print("Current datetime is:", now.strftime("%c"))
+print("Current datetime is:", now.strftime("%x"))
+print("Current datetime is:", now.strftime("%X"))
+
+print("Current date in 24-hour format:", now.strftime("%H:%M:%S"))
+print("Current date in 12-hour format:", now.strftime("%I:%M:%S"))
