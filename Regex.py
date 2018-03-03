@@ -20,4 +20,9 @@ else:
 checkString = "1980 year of my birth"
 print(re.match("(\d{4})", checkString).groups())
 
-# checkString = "Peter was born in 1980, and Jessica 3 years later in 1983."
+# To search for the first match (not only at the beginning of the line), the search method
+checkString = "Peter was born in 2000, and Jessica 3 years later in 2003."
+print(re.search(r"(\d{4})", checkString).groups())
+
+# To search all matches, use findall
+print(re.findall(r"(\d{4})", checkString))
