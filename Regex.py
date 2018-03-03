@@ -26,3 +26,14 @@ print(re.search(r"(\d{4})", checkString).groups())
 
 # To search all matches, use findall
 print(re.findall(r"(\d{4})", checkString))
+
+# using flags in regex methods
+print(re.findall("pyThoN", str, re.IGNORECASE))
+veryLongString = """This
+is
+a
+very
+long
+string
+."""
+print(re.findall(r"^\w", veryLongString, re.MULTILINE))
