@@ -24,3 +24,8 @@ print("Current time is:", datetime.time(now))
 print("Current hour is:", now.hour)
 print("Current minute is:", now.minute)
 print("Current second is:", now.second)
+
+# date formatting
+# [(%y/%Y – Year), (%a/%A- weekday), (%b/%B- month), (%d - day of month)] .
+
+print("Current datetime is:", now.strftime("%d %B %Y, %a"))
