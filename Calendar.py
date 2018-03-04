@@ -18,3 +18,14 @@ for m in calendar.month_name:
 
 for d in calendar.day_abbr:
     print(d)
+
+# print day of week in each month in 2018 year
+for month in range(1, 13):
+    month_cal = calendar.monthcalendar(2018, month)
+    first_week = month_cal[0]
+
+    for d in first_week:
+        if d == 1:
+            print("In %s 2018, the first day of the month is %s."
+                  % (calendar.month_name[month], calendar.day_name[first_week.index(d)]))
+            break
