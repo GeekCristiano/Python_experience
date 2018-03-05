@@ -19,3 +19,10 @@ f = open("file.txt", "r")
 contents = f.read()
 print(contents)
 f.close()
+
+# read contents line by line
+
+f = open("file.txt", "r")
+
+for line in f.readlines():
+    print(line, end="")
