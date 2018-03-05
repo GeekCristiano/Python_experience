@@ -7,3 +7,8 @@ for row in range(1, 12):
     f.write("Line #%d\n" % row)
 # close file
 f.close()
+
+# append line into file
+f = open("file.txt", "a+")
+f.write("It is last line into file!\n")
+f.close()
