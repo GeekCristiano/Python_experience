@@ -12,3 +12,10 @@ f.close()
 f = open("file.txt", "a+")
 f.write("It is last line into file!\n")
 f.close()
+
+# open file for reading
+f = open("file.txt", "r")
+# read contents from file
+contents = f.read()
+print(contents)
+f.close()
