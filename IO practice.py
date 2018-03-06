@@ -1,4 +1,5 @@
-# lets' learn how work with files: create, open, append, read, write
+# lets' learn how work with files: create, open, append, read, write, also checking file and folder exists
+from os import path
 
 # Open or create file.txt
 f = open("file.txt", "w+")
@@ -26,3 +27,8 @@ f = open("file.txt", "r")
 
 for line in f.readlines():
     print(line, end="")
+
+# file existence check
+
+print(path.exists("file.txt"))
+print(path.exists("another_file.txt"))
