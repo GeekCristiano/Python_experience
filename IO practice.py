@@ -1,4 +1,5 @@
 # lets' learn how work with files: create, open, append, read, write, also checking file and folder exists
+import pathlib
 from os import path
 
 # Open or create file.txt
@@ -37,3 +38,6 @@ if path.isfile("file.txt"):
     print("It's a file.")
 else:
     print("It's a folder.")
+
+file_path = pathlib.Path("file.txt")
+print("File exist.") if file_path.exists() else print("File not exists")
