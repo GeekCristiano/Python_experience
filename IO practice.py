@@ -41,3 +41,6 @@ else:
 
 file_path = pathlib.Path("file.txt")
 print("File exist.") if file_path.exists() else print("File not exists")
+
+# get file path
+print(path.realpath("file.txt"))
