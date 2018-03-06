@@ -32,3 +32,8 @@ for line in f.readlines():
 
 print(path.exists("file.txt"))
 print(path.exists("another_file.txt"))
+
+if path.isfile("file.txt"):
+    print("It's a file.")
+else:
+    print("It's a folder.")
