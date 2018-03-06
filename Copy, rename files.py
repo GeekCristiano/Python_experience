@@ -1,6 +1,7 @@
 # Lets' learn how copying file in python
 
 import shutil
+import time
 from os import path
 
 
@@ -25,11 +26,25 @@ def copy_file(file_name):
         return False
 
 
+def get_info(file_name):
+    if path.exists(file_name):
+        creation_date = time.ctime(path.getctime(file_name))
+        last_change_time = time.ctime(path.getmtime(file_name))
+    else:
+        return
+    return (creation_date, last_change_time)
+
+
 def main():
-    if copy_file("file.txt") == True:
+    if copy_file("file.txt") is True:
         print("File successfully copied.")
     else:
         print("An error occurred while copying.")
+
+        # unpacking tuple
+    (creation_date, last_change_time) = get_info("file.txt")
+    print("Creation time:", creation_date)
+    print("Last modified time:", last_change_time)
 
 
 if __name__ == "__main__":
