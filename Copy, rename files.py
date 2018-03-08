@@ -3,6 +3,7 @@
 import shutil
 import time
 from os import path
+from os import rename
 
 
 def copy_file(file_name):
@@ -34,6 +35,9 @@ def get_info(file_name):
         return
     return (creation_date, last_change_time)
 
+# code for rename source file
+def rename_file(file, new_name):
+ # some code here
 
 def main():
     if copy_file("file.txt") is True:
