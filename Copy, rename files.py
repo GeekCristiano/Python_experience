@@ -44,6 +44,13 @@ def rename_file(src, new_name):
         src_path, old_file_name = path.split(file_path)
         rename(file_path, src_path + sep + new_name)
 
+        return True if path.exists(src_path + sep + new_name) else False
+
+    else:
+        print("Inccorect input!")
+        return False
+
+
 def main():
     if copy_file("file.txt") is True:
         print("File successfully copied.")
@@ -54,6 +61,8 @@ def main():
     (creation_date, last_change_time) = get_info("file.txt")
     print("Creation time:", creation_date)
     print("Last modified time:", last_change_time)
+
+    rename_file("file.txt", "file.txt")
 
 
 if __name__ == "__main__":
