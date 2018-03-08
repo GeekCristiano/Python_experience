@@ -45,9 +45,8 @@ def rename_file(src, new_name):
         rename(file_path, src_path + sep + new_name)
 
         return True if path.exists(src_path + sep + new_name) else False
-
     else:
-        print("Inccorect input!")
+        print("Incorrect input!")
         return False
 
 
@@ -62,8 +61,10 @@ def main():
     print("Creation time:", creation_date)
     print("Last modified time:", last_change_time)
 
-    rename_file("file.txt", "file.txt")
-
+    if rename_file("file.txt", "new_file.txt") is True:
+        print("Source file renamed successfully.")
+    else:
+        print("An error occurred while renaming.")
 
 if __name__ == "__main__":
     main()
