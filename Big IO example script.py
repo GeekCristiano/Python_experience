@@ -25,7 +25,7 @@ def main():
     if create_item("test_folder") is True:
         print("New folder is successfully created!")
     else:
-        print("An error occurred while making new directory.")
+        print("A new directory was not created.")
 
 
 if __name__ == "__main__":
