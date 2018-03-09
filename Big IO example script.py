@@ -41,13 +41,15 @@ def remove_item(name):
 def main():
     if create_item("test_folder") is True:
         print("New folder is successfully created!")
+        new_folder_path = path.realpath("test_folder")
+        print(new_folder_path)
+
+        if remove_item("test_folder") is True:
+            print("Folder is successfully removed!")
+        else:
+            print("Folder is not removed!")
     else:
         print("A new directory was not created.")
-
-    if remove_item("test_folder") is True:
-        print("Folder is successfully removed!")
-    else:
-        print("Folder is not removed!")
 
 
 if __name__ == "__main__":
