@@ -8,16 +8,17 @@ import os
 from os import path
 
 
-def create_item(name):
-    # get script execution folder
-    current_directory = path.realpath(path.curdir)
-
-    # Try to create a new directory in the current folder
-    try:
-        os.mkdir(current_directory + os.sep + name)
-        return True
-    except OSError:
-        print("An error occurred while making new directory.")
+def create_item(folder_path, name):
+    if path.exists(folder_path) and path.isdir(folder_path):
+        # Try to create a new directory in the current folder
+        try:
+            os.mkdir(folder_path + os.sep + name)
+            return True
+        except OSError:
+            print("An error occurred while making new directory.")
+            return False
+    else:
+        print("Incorrect arguments!")
         return False
 
 
@@ -39,7 +40,9 @@ def remove_item(name):
 
 
 def main():
-    if create_item("test_folder") is True:
+    initial_folder_pat = path.realpath(path.curdir)
+
+    if create_item(initial_folder_pat, "test_folder") is True:
         print("New folder is successfully created!")
         new_folder_path = path.realpath("test_folder")
         print(new_folder_path)
