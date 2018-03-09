@@ -21,11 +21,33 @@ def create_item(name):
         return False
 
 
+def remove_item(name):
+    # Check that the directory exists
+    if path.exists(name) and path.isdir(name):
+
+        dir_path = path.realpath(name)
+
+        try:
+            os.rmdir(dir_path)
+            return True
+        except OSError:
+            print("An error occurred while removing directory.")
+            return False
+    else:
+        print("Incorrect argument!")
+        return False
+
+
 def main():
     if create_item("test_folder") is True:
         print("New folder is successfully created!")
     else:
         print("A new directory was not created.")
+
+    if remove_item("test_folder") is True:
+        print("Folder is successfully removed!")
+    else:
+        print("Folder is not removed!")
 
 
 if __name__ == "__main__":
