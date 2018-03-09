@@ -4,5 +4,10 @@
 # After I copy the file.
 # Finally I delete the created directory and all the files inside.
 
+import os
+from os import path
 
-print("Soon there will be a lot of code. . .")
+current_directory = path.realpath(path.curdir)
+
+os.mkdir(current_directory + os.sep + "test_directory")
+os.rmdir(current_directory + os.sep + "test_directory")
