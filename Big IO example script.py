@@ -39,13 +39,35 @@ def remove_folder(name):
         return False
 
 
+def create_file(folder_path, name):
+    full_path = folder_path + path.sep + name
+
+    if not path.exists(full_path):
+        try:
+            new_file = open(full_path, "x")
+            new_file.close()
+            print("File %s is successfully created!" % name)
+            return True
+        except:
+            print("An error occurred while creating file.")
+            return False
+    else:
+        print("File %s already exists." % name)
+        return False
+
+
 def main():
     initial_folder_path = path.realpath(path.curdir)
 
     if create_folder(initial_folder_path, "test_folder") is True:
         print("New folder is successfully created!")
+
         new_folder_path = path.realpath("test_folder")
-        print(new_folder_path)
+
+        if create_file(new_folder_path, "test_file.txt") is True:
+            print("New file is successfully created!")
+        else:
+            print("New file is not created!")
 
         if remove_folder("test_folder") is True:
             print("Folder is successfully removed!")
