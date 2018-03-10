@@ -40,9 +40,9 @@ def remove_item(name):
 
 
 def main():
-    initial_folder_pat = path.realpath(path.curdir)
+    initial_folder_path = path.realpath(path.curdir)
 
-    if create_item(initial_folder_pat, "test_folder") is True:
+    if create_item(initial_folder_path, "test_folder") is True:
         print("New folder is successfully created!")
         new_folder_path = path.realpath("test_folder")
         print(new_folder_path)
