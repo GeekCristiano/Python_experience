@@ -94,11 +94,12 @@ def main():
         else:
             print("New file is not created!")
 
-        # try to remove new file
-        if remove_file(new_folder_path + os.sep + "test_file.txt") is True:
-            print("File is successfully removed!")
+        # try to remove all files in test directory
+        if (remove_file(new_folder_path + os.sep + "test_file.txt") and
+                remove_file(new_folder_path + os.sep + "test_file.txt.bak")) is True:
+            print("Files are successfully removed!")
         else:
-            print("File is not removed!")
+            print("Files are not removed!")
 
         if remove_folder("test_folder") is True:
             print("Folder is successfully removed!")
