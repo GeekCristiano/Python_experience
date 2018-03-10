@@ -8,7 +8,7 @@ import os
 from os import path
 
 
-def create_item(folder_path, name):
+def create_folder(folder_path, name):
     if path.exists(folder_path) and path.isdir(folder_path):
         # Try to create a new directory in the current folder
         try:
@@ -22,7 +22,7 @@ def create_item(folder_path, name):
         return False
 
 
-def remove_item(name):
+def remove_folder(name):
     # Check that the directory exists
     if path.exists(name) and path.isdir(name):
 
@@ -42,12 +42,12 @@ def remove_item(name):
 def main():
     initial_folder_path = path.realpath(path.curdir)
 
-    if create_item(initial_folder_path, "test_folder") is True:
+    if create_folder(initial_folder_path, "test_folder") is True:
         print("New folder is successfully created!")
         new_folder_path = path.realpath("test_folder")
         print(new_folder_path)
 
-        if remove_item("test_folder") is True:
+        if remove_folder("test_folder") is True:
             print("Folder is successfully removed!")
         else:
             print("Folder is not removed!")
