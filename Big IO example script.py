@@ -5,6 +5,7 @@
 # Finally I delete the created directory and all the files inside.
 
 import os
+import shutil
 
 
 def create_folder(folder_path, name):
@@ -81,10 +82,14 @@ def main():
             # write some data to file
             file = open(new_folder_path + os.sep + "test_file.txt", "w")
 
-            for line in range(12):
-                file.write("Line #%d\r\n" % line)
+            for number in range(12):
+                file.write("Line #%d\r\n" % number)
 
             file.close()
+
+            # get copy of test_file.txt with full metadata
+            shutil.copy(new_folder_path + os.sep + "test_file.txt",
+                        new_folder_path + os.sep + "test_file.txt.bak")
 
         else:
             print("New file is not created!")
