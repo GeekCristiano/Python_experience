@@ -5,11 +5,10 @@
 # Finally I delete the created directory and all the files inside.
 
 import os
-from os import path
 
 
 def create_folder(folder_path, name):
-    if path.exists(folder_path) and path.isdir(folder_path):
+    if os.path.exists(folder_path) and os.path.isdir(folder_path):
         # Try to create a new directory in the current folder
         try:
             os.mkdir(folder_path + os.sep + name)
@@ -24,9 +23,9 @@ def create_folder(folder_path, name):
 
 def remove_folder(name):
     # Check that the directory exists
-    if path.exists(name) and path.isdir(name):
+    if os.path.exists(name) and os.path.isdir(name):
 
-        dir_path = path.realpath(name)
+        dir_path = os.path.realpath(name)
 
         try:
             os.rmdir(dir_path)
@@ -40,9 +39,9 @@ def remove_folder(name):
 
 
 def create_file(folder_path, name):
-    full_path = folder_path + path.sep + name
+    full_path = folder_path + os.path.sep + name
 
-    if not path.exists(full_path):
+    if not os.path.exists(full_path):
         try:
             new_file = open(full_path, "x")
             new_file.close()
@@ -56,31 +55,37 @@ def create_file(folder_path, name):
         return False
 
 
-# fuction to remove file
-# def remove_file(path_to_file):
-#     if path.exists(path_to_file) and path.isfile(path_to_file):
-#         try:
-#             os.remove(path_to_file)
-#             return True
-#         except:
-#             print("An error occurred while removing directory.")
-#     else:
-#         print("Invalid argument!")
-#         return False
+def remove_file(path_to_file):
+    if os.path.exists(path_to_file) and os.path.isfile(path_to_file):
+        try:
+            os.remove(path_to_file)
+            return True
+        except:
+            print("An error occurred while removing directory.")
+            return False
+    else:
+        print("Invalid argument!")
+        return False
 
 
 def main():
-    initial_folder_path = path.realpath(path.curdir)
+    initial_folder_path = os.path.realpath(os.path.curdir)
 
     if create_folder(initial_folder_path, "test_folder") is True:
         print("New folder is successfully created!")
 
-        new_folder_path = path.realpath("test_folder")
+        new_folder_path = os.path.realpath("test_folder")
 
         if create_file(new_folder_path, "test_file.txt") is True:
             print("New file is successfully created!")
         else:
             print("New file is not created!")
+
+        # try to remove new file
+        if remove_file(new_folder_path + os.sep + "test_file.txt") is True:
+            print("File is successfully removed!")
+        else:
+            print("File is not removed!")
 
         if remove_folder("test_folder") is True:
             print("Folder is successfully removed!")
