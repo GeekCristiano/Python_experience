@@ -56,6 +56,19 @@ def create_file(folder_path, name):
         return False
 
 
+# fuction to remove file
+# def remove_file(path_to_file):
+#     if path.exists(path_to_file) and path.isfile(path_to_file):
+#         try:
+#             os.remove(path_to_file)
+#             return True
+#         except:
+#             print("An error occurred while removing directory.")
+#     else:
+#         print("Invalid argument!")
+#         return False
+
+
 def main():
     initial_folder_path = path.realpath(path.curdir)
 
