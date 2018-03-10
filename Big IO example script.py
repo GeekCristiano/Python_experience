@@ -78,6 +78,14 @@ def main():
 
         if create_file(new_folder_path, "test_file.txt") is True:
             print("New file is successfully created!")
+            # write some data to file
+            file = open(new_folder_path + os.sep + "test_file.txt", "w")
+
+            for line in range(12):
+                file.write("Line #%d\r\n" % line)
+
+            file.close()
+
         else:
             print("New file is not created!")
 
