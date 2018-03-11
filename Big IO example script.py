@@ -87,9 +87,17 @@ def main():
 
             file.close()
 
+            # rename text file
+            os.rename(new_folder_path + os.sep + "test_file.txt",
+                      new_folder_path + os.sep + "test_file_renamed.txt")
+
             # get copy of test_file.txt with full metadata
             shutil.copy(new_folder_path + os.sep + "test_file.txt",
                         new_folder_path + os.sep + "test_file.txt.bak")
+
+            # rename test folder
+            parent_folder, folder_name = os.path.split(new_folder_path)
+            os.rename(new_folder_path, parent_folder + os.sep + "test_folder_renamed")
 
         else:
             print("New file is not created!")
