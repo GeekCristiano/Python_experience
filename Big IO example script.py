@@ -72,10 +72,10 @@ def remove_file(path_to_file):
 def main():
     initial_folder_path = os.path.realpath(os.path.curdir)
     initial_file_name = "test_file.txt"
-    initial_folder_name = "test_folder"
-    renamed_file_name = "test_file_renamed.txt"
-    renamed_folder_name = "test_folder_renamed"
     copy_file_name = "test_file.txt.bak"
+    renamed_file_name = "test_file_renamed.txt"
+    initial_folder_name = "test_folder"
+    renamed_folder_name = "test_folder_renamed"
 
     if create_folder(initial_folder_path, initial_folder_name) is True:
         print("New folder is successfully created!")
@@ -97,24 +97,26 @@ def main():
                       new_folder_path + os.sep + renamed_file_name)
 
             # get copy of test_file.txt with full metadata
-            shutil.copy(new_folder_path + os.sep + initial_file_name,
+            shutil.copy(new_folder_path + os.sep + renamed_file_name,
                         new_folder_path + os.sep + copy_file_name)
 
             # rename test folder
             parent_folder, folder_name = os.path.split(new_folder_path)
-            os.rename(new_folder_path, parent_folder + os.sep + renamed_folder_name)
+
+            full_new_folder_path = parent_folder + os.sep + renamed_folder_name
+            os.rename(new_folder_path, full_new_folder_path)
 
         else:
             print("New file is not created!")
 
         # try to remove all files in test directory
-        if (remove_file(new_folder_path + os.sep + initial_file_name) and
-                remove_file(new_folder_path + os.sep + copy_file_name)) is True:
+        if (remove_file(full_new_folder_path + os.sep + renamed_file_name) and
+                remove_file(full_new_folder_path + os.sep + copy_file_name)) is True:
             print("Files are successfully removed!")
         else:
             print("Files are not removed!")
 
-        if remove_folder(initial_folder_name) is True:
+        if remove_folder(renamed_folder_name) is True:
             print("Folder is successfully removed!")
         else:
             print("Folder is not removed!")
