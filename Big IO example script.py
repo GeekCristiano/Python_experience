@@ -71,16 +71,21 @@ def remove_file(path_to_file):
 
 def main():
     initial_folder_path = os.path.realpath(os.path.curdir)
+    initial_file_name = "test_file.txt"
+    initial_folder_name = "test_folder"
+    renamed_file_name = "test_file_renamed.txt"
+    renamed_folder_name = "test_folder_renamed"
+    copy_file_name = "test_file.txt.bak"
 
-    if create_folder(initial_folder_path, "test_folder") is True:
+    if create_folder(initial_folder_path, initial_folder_name) is True:
         print("New folder is successfully created!")
 
-        new_folder_path = os.path.realpath("test_folder")
+        new_folder_path = os.path.realpath(initial_folder_name)
 
-        if create_file(new_folder_path, "test_file.txt") is True:
+        if create_file(new_folder_path, initial_file_name) is True:
             print("New file is successfully created!")
             # write some data to file
-            file = open(new_folder_path + os.sep + "test_file.txt", "w")
+            file = open(new_folder_path + os.sep + initial_file_name, "w")
 
             for number in range(12):
                 file.write("Line #%d\r\n" % number)
@@ -88,28 +93,28 @@ def main():
             file.close()
 
             # rename text file
-            os.rename(new_folder_path + os.sep + "test_file.txt",
-                      new_folder_path + os.sep + "test_file_renamed.txt")
+            os.rename(new_folder_path + os.sep + initial_file_name,
+                      new_folder_path + os.sep + renamed_file_name)
 
             # get copy of test_file.txt with full metadata
-            shutil.copy(new_folder_path + os.sep + "test_file.txt",
-                        new_folder_path + os.sep + "test_file.txt.bak")
+            shutil.copy(new_folder_path + os.sep + initial_file_name,
+                        new_folder_path + os.sep + copy_file_name)
 
             # rename test folder
             parent_folder, folder_name = os.path.split(new_folder_path)
-            os.rename(new_folder_path, parent_folder + os.sep + "test_folder_renamed")
+            os.rename(new_folder_path, parent_folder + os.sep + renamed_folder_name)
 
         else:
             print("New file is not created!")
 
         # try to remove all files in test directory
-        if (remove_file(new_folder_path + os.sep + "test_file.txt") and
-                remove_file(new_folder_path + os.sep + "test_file.txt.bak")) is True:
+        if (remove_file(new_folder_path + os.sep + initial_file_name) and
+                remove_file(new_folder_path + os.sep + copy_file_name)) is True:
             print("Files are successfully removed!")
         else:
             print("Files are not removed!")
 
-        if remove_folder("test_folder") is True:
+        if remove_folder(initial_folder_name) is True:
             print("Folder is successfully removed!")
         else:
             print("Folder is not removed!")
