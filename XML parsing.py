@@ -1,6 +1,7 @@
 # let's study how work with XML in python
 
 import xml.dom.minidom
+import xml.etree.ElementTree as ET
 
 
 def main():
@@ -13,6 +14,14 @@ def main():
     # print information about each employee
     for employee in employees_list:
         print(employee.toxml())
+
+    # parsing XML using ElementTree
+    tree = ET.parse('data.xml')
+    company = tree.getroot()
+
+    for employee in company:
+        # print name of each employee in company
+        print(employee[0].text)
 
 
 if __name__ == "__main__":
