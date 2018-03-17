@@ -21,7 +21,9 @@ def main():
 
     for employee in company:
         # print name of each employee in company
-        print(employee[0].text)
+
+        name_employee = employee[0].text
+        print(name_employee)
 
 
 if __name__ == "__main__":
