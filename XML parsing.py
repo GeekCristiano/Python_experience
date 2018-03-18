@@ -46,6 +46,12 @@ def main():
     doc.childNodes[0].appendChild(new_employee_tag)
     print("Now in company works {} employees.".format(doc.getElementsByTagName("employee").length))
 
+    file = open("data_new.xml", "w")
+
+    doc.writexml(file, indent="", newl="\n", addindent="\t")
+
+    file.close()
+
 
 if __name__ == "__main__":
     main()
