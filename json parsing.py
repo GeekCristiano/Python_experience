@@ -16,6 +16,8 @@ def main():
 
     # from python to json
     python_json_obj = {"name": "John", "age": 27, "isEmployee": True}
+    # add node to json object
+    python_json_obj["country"] = "USA"
     json_data = json.dumps(python_json_obj)
     print(json_data)
 
