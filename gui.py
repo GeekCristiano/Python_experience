@@ -6,9 +6,10 @@ from tkinter import *
 def main():
     main_window = Tk()
     text = StringVar()
-    label = Label(main_window, textvariable=text, relief=RAISED)
+    label = Label(main_window, textvariable=text)
     text.set("Hello, world!")
     label.pack()
+    main_window.resizable(width=False, height=False)
     main_window.mainloop()
 
 
