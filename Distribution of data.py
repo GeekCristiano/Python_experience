@@ -20,10 +20,15 @@ def main():
     # read and parse all data from source file
     list = source_file.readlines()
 
+    file_name_template = "source_file_1.txt"
+
+    first_part = open(file_name_template, "w")
+
     for ind, value in enumerate(list):
-        if (ind + 1) % 40 == 0:
-            print(int(value))
-            print(int(ind))
+        if ind < 40:
+            first_part.write(value)
+
+    first_part.close()
     source_file.close()
 
 
