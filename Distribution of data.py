@@ -5,14 +5,17 @@ import random
 
 def main():
     # create source data set
-    source_file = open("source_file.txt", "w")
+    try:
+        source_file = open("source_file.txt", "w")
 
-    # generate random data and write to source file
-    for elem in range(4000):
-        value = random.randint(10000000, 19999999)
-        source_file.write("{}\n".format(value))
+        # generate random data and write to source file
+        for elem in range(4000):
+            value = random.randint(10000000, 19999999)
+            source_file.write("{}\n".format(value))
 
-    source_file.close()
+        source_file.close()
+    except IOError:
+        print("An error occurred while opening the file.")
 
 
 if __name__ == "__main__":
