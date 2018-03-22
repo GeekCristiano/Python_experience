@@ -25,6 +25,13 @@ def main():
     first_part = open(file_name_template, "w")
 
     for ind, value in enumerate(list):
+        # pseudocode:
+        # create new file
+        # add increment number of file name in the end of it
+        # open file
+        # write to it 40s elements of source file
+        # close
+        # repeat
         if ind < 40:
             first_part.write(value)
 
