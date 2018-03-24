@@ -2,6 +2,7 @@
 # There is a file for 4000 lines. It is necessary to make 40 files of 100 lines.
 
 import os
+import shutil
 from random import randint
 
 
@@ -37,27 +38,29 @@ def main():
     except IOError:
         print("Something went wrong. . .")
 
+    source_data = open(source_file_full_path, "r")
+    list = source_data.readlines()
+    file_name_template = "part_#{}.txt"
+    file_full_path = test_dir_full_path + os.sep + file_name_template
+    count = 0
 
-# source_file = open("source_file.txt", "r")  # read and parse all data from source file
-# list = source_file.readlines()
-#
-# file_name_template = "source_file_{}.txt"
-# count = 0
-#
-# for ind, value in enumerate(list):
-#
-#     if (ind + 1) % 40 == 0:
-#         count = count + 1
-#         start_index = (ind + 1) - 40
-#         print(start_index)
-#
-#         file = open(file_name_template.format(count), "w")
-#
-#         for i in range(40):
-#             file.write(list[start_index + i])
-#
-#         file.close()
-# source_file.close()
+    # Get 40 parts of the source file
+
+    for ind, value in enumerate(list):
+        if (ind + 1) % 40 == 0:
+            count = count + 1
+            start_index = (ind + 1) - 40
+
+            file = open(file_full_path.format(count), "w")
+
+            for i in range(40):
+                file.write(list[start_index + i])
+            file.close()
+    source_data.close()
+
+    # delete delete the test directory with all the files inside
+    shutil.rmtree(test_dir_full_path)
+
 
 if __name__ == "__main__":
     main()
