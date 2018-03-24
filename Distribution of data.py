@@ -20,22 +20,22 @@ def main():
     # read and parse all data from source file
     list = source_file.readlines()
 
-    file_name_template = "source_file_1.txt"
-
-    first_part = open(file_name_template, "w")
+    file_name_template = "source_file_{}.txt"
+    count = 0
 
     for ind, value in enumerate(list):
-        # pseudocode:
-        # create new file
-        # add increment number of file name in the end of it
-        # open file
-        # write to it 40s elements of source file
-        # close
-        # repeat
-        if ind < 40:
-            first_part.write(value)
 
-    first_part.close()
+        if (ind + 1) % 40 == 0:
+            count = count + 1
+            start_index = (ind + 1) - 40
+            print(start_index)
+
+            file = open(file_name_template.format(count), "w")
+
+            for i in range(40):
+                file.write(list[start_index + i])
+
+            file.close()
     source_file.close()
 
 
