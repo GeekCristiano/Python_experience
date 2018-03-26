@@ -26,7 +26,7 @@ def main():
     btn4.pack(side=LEFT)
     btn5.pack(side=LEFT)
 
-    # main_window.resizable(width=False, height=False)
+    main_window.resizable(width=False, height=False)
     main_window.mainloop()
 
 
