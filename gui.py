@@ -4,31 +4,38 @@
 from tkinter import *
 
 
-def main():
-    main_window = Tk()
-    btn0 = Button(main_window, text="+")
-    btn1 = Button(main_window, text="-")
-    btn2 = Button(main_window, text="*")
-    btn3 = Button(main_window, text="/")
-    btn4 = Button(main_window, text="=")
-    btn5 = Button(main_window, text="C")
-    field = Entry(main_window)
-    string_var = StringVar()
-    status_bar = Label(main_window, textvariable=string_var)
-    string_var.set("The result of the operation will appear here")
+class SimpleCalculator(Tk):
+    def __init__(self):
+        Tk.__init__(self)
 
-    field.pack(side=TOP)
-    status_bar.pack(side=BOTTOM)
-    btn0.pack(side=LEFT)
-    btn1.pack(side=LEFT)
-    btn2.pack(side=LEFT)
-    btn3.pack(side=LEFT)
-    btn4.pack(side=LEFT)
-    btn5.pack(side=LEFT)
+        self.btn0 = Button(self, text="+")
+        self.btn1 = Button(self, text="-")
+        self.btn2 = Button(self, text="*")
+        self.btn3 = Button(self, text="/")
+        self.btn4 = Button(self, text="=", command=self.on_button)
+        self.btn5 = Button(self, text="C")
+        self.field = Entry(self)
+        self.string_var = StringVar()
+        self.status_bar = Label(self, textvariable=self.string_var)
+        self.string_var.set("The result of the operation will appear here")
 
-    main_window.resizable(width=False, height=False)
-    main_window.mainloop()
+        self.field.pack(side=TOP)
+        self.status_bar.pack(side=BOTTOM)
+        self.btn0.pack(side=LEFT)
+        self.btn1.pack(side=LEFT)
+        self.btn2.pack(side=LEFT)
+        self.btn3.pack(side=LEFT)
+        self.btn4.pack(side=LEFT)
+        self.btn5.pack(side=LEFT)
+
+        self.resizable(width=False, height=False)
+
+    def on_button(self):
+        self.string_var.set("You typed: " + self.field.get())
 
 
-if __name__ == "__main__":
-    main()
+w = SimpleCalculator()
+w.mainloop()
+
+
+# main_window.resizable(width=False, height=False)
