@@ -29,13 +29,14 @@ class SimpleCalculator(Tk):
         self.btn5.pack(side=LEFT)
 
         self.resizable(width=False, height=False)
+        self.title("Calculator")
 
     def on_button(self):
         self.string_var.set("You typed: " + self.field.get())
 
 
-w = SimpleCalculator()
-w.mainloop()
+calculatorApp = SimpleCalculator()
+calculatorApp.mainloop()
 
 
 # main_window.resizable(width=False, height=False)
