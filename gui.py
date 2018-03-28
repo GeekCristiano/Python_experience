@@ -29,7 +29,7 @@ class SimpleCalculator(Tk):
         self.btn5.pack(side=LEFT)
 
         self.resizable(width=False, height=False)
-        self.title("Calculator")
+        self.title("Simple calculator")
 
     def on_button(self):
         self.string_var.set("You typed: " + self.field.get())
