@@ -8,7 +8,8 @@ class SimpleCalculator(Tk):
     def __init__(self):
         Tk.__init__(self)
 
-        self.input_field = Entry(self, state='disabled')
+        self.input_field = Entry(self)
+
         self.btn0 = Button(self, text="0")
         self.btn1 = Button(self, text="1")
         self.btn2 = Button(self, text="2")
@@ -29,8 +30,18 @@ class SimpleCalculator(Tk):
         self.status_bar = Label(self, textvariable=self.string_var)
         self.string_var.set("Result:")
 
-        self.input_field.grid(row=0, columnspan=4)
+        self.btn0.bind("<Button-1>", self.update_input_field)
+        self.btn1.bind("<Button-1>", self.update_input_field)
+        self.btn2.bind("<Button-1>", self.update_input_field)
+        self.btn3.bind("<Button-1>", self.update_input_field)
+        self.btn4.bind("<Button-1>", self.update_input_field)
+        self.btn5.bind("<Button-1>", self.update_input_field)
+        self.btn6.bind("<Button-1>", self.update_input_field)
+        self.btn7.bind("<Button-1>", self.update_input_field)
+        self.btn8.bind("<Button-1>", self.update_input_field)
+        self.btn9.bind("<Button-1>", self.update_input_field)
 
+        self.input_field.grid(row=0, columnspan=4)
         self.btn0.grid(row=1, column=0)
         self.btn1.grid(row=1, column=1)
         self.btn2.grid(row=1, column=2)
@@ -47,7 +58,6 @@ class SimpleCalculator(Tk):
         self.btn_ms.grid(row=4, column=1)
         self.btn_mul.grid(row=4, column=2)
         self.btn_div.grid(row=4, column=3)
-
         self.status_bar.grid(row=5, columnspan=4)
 
         self.title("Simple calculator")
@@ -59,6 +69,12 @@ class SimpleCalculator(Tk):
 
     def get_input_text(self):
         print("Input text is:" + self.input_field.get())
+
+    def update_input_field(self, event):
+        current_value = self.input_field.get()
+        control_element_text = event.widget["text"]
+        self.input_field.delete(0, END)
+        self.input_field.insert(0, current_value + control_element_text)
 
 
 def main():
