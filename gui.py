@@ -8,7 +8,7 @@ class SimpleCalculator(Tk):
     def __init__(self):
         Tk.__init__(self)
 
-        self.input_field = Entry(self, )
+        self.input_field = Entry(self, state='disabled')
         self.btn0 = Button(self, text="0")
         self.btn1 = Button(self, text="1")
         self.btn2 = Button(self, text="2")
