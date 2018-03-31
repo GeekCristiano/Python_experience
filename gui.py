@@ -51,6 +51,7 @@ class SimpleCalculator(Tk):
         self.status_bar.grid(row=5, columnspan=4)
 
         self.title("Simple calculator")
+        self.resizable(width=False, height=False)
 
 
 calculatorApp = SimpleCalculator()
