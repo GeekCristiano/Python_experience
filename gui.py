@@ -8,7 +8,7 @@ class SimpleCalculator(Tk):
     def __init__(self):
         Tk.__init__(self)
 
-        self.input_field = Entry(self)
+        self.input_field = Entry(self, )
         self.btn0 = Button(self, text="0")
         self.btn1 = Button(self, text="1")
         self.btn2 = Button(self, text="2")
@@ -20,7 +20,7 @@ class SimpleCalculator(Tk):
         self.btn8 = Button(self, text="8")
         self.btn9 = Button(self, text="9")
         self.btn_clean = Button(self, text="C")
-        self.btn_equal = Button(self, text="=")
+        self.btn_equal = Button(self, text="=", command=self.get_input_text)
         self.btn_pl = Button(self, text="+")
         self.btn_ms = Button(self, text="-")
         self.btn_mul = Button(self, text="*")
@@ -56,6 +56,9 @@ class SimpleCalculator(Tk):
         self.grid_rowconfigure(1, pad=5)
         self.grid_rowconfigure(2, pad=5)
         self.grid_rowconfigure(3, pad=5)
+
+    def get_input_text(self):
+        print("Input text is:" + self.input_field.get())
 
 
 def main():
