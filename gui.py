@@ -58,5 +58,10 @@ class SimpleCalculator(Tk):
         self.grid_rowconfigure(3, pad=5)
 
 
-calculatorApp = SimpleCalculator()
-calculatorApp.mainloop()
+def main():
+    calculatorApp = SimpleCalculator()
+    calculatorApp.mainloop()
+
+
+if __name__ == "__main__":
+    main()
