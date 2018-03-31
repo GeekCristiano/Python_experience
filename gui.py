@@ -52,11 +52,11 @@ class SimpleCalculator(Tk):
 
         self.title("Simple calculator")
         self.resizable(width=False, height=False)
+        self.grid_rowconfigure(0, pad=5)
+        self.grid_rowconfigure(1, pad=5)
+        self.grid_rowconfigure(2, pad=5)
+        self.grid_rowconfigure(3, pad=5)
 
 
 calculatorApp = SimpleCalculator()
-calculatorApp.grid_rowconfigure(0, pad=5)
-calculatorApp.grid_rowconfigure(1, pad=5)
-calculatorApp.grid_rowconfigure(2, pad=5)
-calculatorApp.grid_rowconfigure(3, pad=5)
 calculatorApp.mainloop()
