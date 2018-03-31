@@ -21,6 +21,10 @@ class SimpleCalculator(Tk):
         self.btn9 = Button(self, text="9")
         self.btn_clean = Button(self, text="C")
         self.btn_equal = Button(self, text="=")
+        self.btn_pl = Button(self, text="+")
+        self.btn_ms = Button(self, text="-")
+        self.btn_mul = Button(self, text="*")
+        self.btn_div = Button(self, text="/")
         self.string_var = StringVar()
         self.status_bar = Label(self, textvariable=self.string_var)
         self.string_var.set("Result:")
@@ -39,7 +43,12 @@ class SimpleCalculator(Tk):
         self.btn9.grid(row=3, column=1)
         self.btn_clean.grid(row=3, column=2)
         self.btn_equal.grid(row=3, column=3)
-        self.status_bar.grid(row=4, columnspan=4)
+        self.btn_pl.grid(row=4, column=0)
+        self.btn_ms.grid(row=4, column=1)
+        self.btn_mul.grid(row=4, column=2)
+        self.btn_div.grid(row=4, column=3)
+
+        self.status_bar.grid(row=5, columnspan=4)
 
         self.title("Simple calculator")
 
