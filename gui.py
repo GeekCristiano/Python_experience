@@ -40,6 +40,7 @@ class SimpleCalculator(Tk):
         self.btn7.bind("<Button-1>", self.update_input_field)
         self.btn8.bind("<Button-1>", self.update_input_field)
         self.btn9.bind("<Button-1>", self.update_input_field)
+        self.btn_clean.bind("<Button-1>", self.delete_last_symbol)
 
         self.input_field.grid(row=0, columnspan=4)
         self.btn0.grid(row=1, column=0)
@@ -69,6 +70,11 @@ class SimpleCalculator(Tk):
 
     def get_input_text(self):
         print("Input text is:" + self.input_field.get())
+
+    def delete_last_symbol(self, event):
+        current_value = self.input_field.get()
+        self.input_field.delete(0, END)
+        self.input_field.insert(0, current_value[:-1])
 
     def update_input_field(self, event):
         current_value = self.input_field.get()
