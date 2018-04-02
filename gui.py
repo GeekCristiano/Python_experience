@@ -9,7 +9,7 @@ class SimpleCalculator(Tk):
         Tk.__init__(self)
 
         vcmd = self.register(self.onValidate)
-        self.input_field = Entry(self, validate="key", validatecommand=(vcmd, '%S', '%W'))
+        self.input_field = Entry(self, validate="key", validatecommand=(vcmd, '%S'))
 
         self.btn0 = Button(self, text="0")
         self.btn1 = Button(self, text="1")
@@ -83,17 +83,18 @@ class SimpleCalculator(Tk):
         self.input_field.delete(0, END)
         self.input_field.insert(0, current_value + control_element_text)
 
-    def onValidate(self, S, W):
-        if S in "0123456789.*/+-":
+    def onValidate(self, S):
+        correct_char_num = 0
+        for char in S:
+            if char in "0123456789.*/+-":
+                correct_char_num += 1
+
+        if correct_char_num == len(S):
             return True
         else:
-            print(S)
-            print(W)
             self.bell()
             return False
 
-
-# TODO: Solve the problem of deleting characters from a entry when you click a button
 
 def main():
     calculatorApp = SimpleCalculator()
