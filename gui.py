@@ -9,7 +9,7 @@ class SimpleCalculator(Tk):
         Tk.__init__(self)
 
         vcmd = self.register(self.onValidate)
-        self.input_field = Entry(self, validate="all", validatecommand=(vcmd, '%S', '%W'))
+        self.input_field = Entry(self, validate="key", validatecommand=(vcmd, '%S', '%W'))
 
         self.btn0 = Button(self, text="0")
         self.btn1 = Button(self, text="1")
@@ -87,6 +87,8 @@ class SimpleCalculator(Tk):
         if S in "0123456789.*/+-":
             return True
         else:
+            print(S)
+            print(W)
             self.bell()
             return False
 
