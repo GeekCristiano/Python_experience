@@ -31,6 +31,11 @@ class SimpleCalculator(Tk):
         self.status_bar = Label(self, textvariable=self.string_var)
         self.string_var.set("Result:")
 
+        self.btn_pl.bind("<Button-1>", self.update_input_field)
+        self.btn_ms.bind("<Button-1>", self.update_input_field)
+        self.btn_mul.bind("<Button-1>", self.update_input_field)
+        self.btn_div.bind("<Button-1>", self.update_input_field)
+
         self.btn0.bind("<Button-1>", self.update_input_field)
         self.btn1.bind("<Button-1>", self.update_input_field)
         self.btn2.bind("<Button-1>", self.update_input_field)
