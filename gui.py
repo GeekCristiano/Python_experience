@@ -85,6 +85,9 @@ class SimpleCalculator(Tk):
     def update_input_field(self, event):
         current_value = self.input_field.get()
         control_element_text = event.widget["text"]
+        if control_element_text == current_value[-1:] and control_element_text in "+-/*":
+            self.bell()
+            return
         self.input_field.delete(0, END)
         self.input_field.insert(0, current_value + control_element_text)
 
