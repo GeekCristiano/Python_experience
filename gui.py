@@ -76,7 +76,11 @@ class SimpleCalculator(Tk):
 
     def get_input_text(self):
         current_value = self.input_field.get()
-        print("Input text is:", current_value)
+        first_value, second_value = current_value.split(sep="-")
+
+        #     update field
+        self.input_field.delete(0, END)
+        self.input_field.insert(0, int(first_value) - int(second_value))
 
     def delete_last_symbol(self, event):
         current_value = self.input_field.get()
