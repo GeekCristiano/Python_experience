@@ -79,8 +79,9 @@ class SimpleCalculator(Tk):
         first_value, second_value = current_value.split(sep="-")
 
         #     update field
+        result = "{:.2f}".format(float(first_value) - float(second_value))
         self.input_field.delete(0, END)
-        self.input_field.insert(0, int(first_value) - int(second_value))
+        self.input_field.insert(0, result)
 
     def delete_last_symbol(self, event):
         current_value = self.input_field.get()
