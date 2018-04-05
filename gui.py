@@ -75,7 +75,8 @@ class SimpleCalculator(Tk):
         self.grid_rowconfigure(3, pad=5)
 
     def get_input_text(self):
-        print("Input text is:" + self.input_field.get())
+        current_value = self.input_field.get()
+        print("Input text is:", current_value)
 
     def delete_last_symbol(self, event):
         current_value = self.input_field.get()
