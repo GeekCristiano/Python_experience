@@ -22,7 +22,7 @@ class SimpleCalculator(Tk):
         self.btn8 = Button(self, text="8")
         self.btn9 = Button(self, text="9")
         self.btn_clean = Button(self, text="C")
-        self.btn_equal = Button(self, text="=", command=self.get_input_text)
+        self.btn_equal = Button(self, text="=", command=self.get_result)
         self.btn_pl = Button(self, text="+")
         self.btn_ms = Button(self, text="-")
         self.btn_mul = Button(self, text="*")
@@ -74,12 +74,12 @@ class SimpleCalculator(Tk):
         self.grid_rowconfigure(2, pad=5)
         self.grid_rowconfigure(3, pad=5)
 
-    def get_input_text(self):
+    def get_result(self):
         current_value = self.input_field.get()
-        first_value, second_value = current_value.split(sep="-")
+        right_operand, left_operand = current_value.split(sep="-")
 
         #     update field
-        result = "{:.2f}".format(float(first_value) - float(second_value))
+        result = "{:.2f}".format(float(right_operand) - float(left_operand))
         self.input_field.delete(0, END)
         self.input_field.insert(0, result)
 
