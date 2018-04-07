@@ -88,7 +88,11 @@ class SimpleCalculator(Tk):
             result = "{:.2f}".format(float(right_operand) * float(left_operand))
         elif "/" in current_value:
             right_operand, left_operand = current_value.split(sep="/")
-            result = "{:.2f}".format(float(right_operand) / float(left_operand))
+            if int(left_operand) == 0:
+                self.bell()
+                return
+            else:
+                result = "{:.2f}".format(float(right_operand) / float(left_operand))
         self.input_field.delete(0, END)
         self.input_field.insert(0, result)
 
