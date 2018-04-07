@@ -76,10 +76,19 @@ class SimpleCalculator(Tk):
 
     def get_result(self):
         current_value = self.input_field.get()
-        right_operand, left_operand = current_value.split(sep="-")
 
-        #     update field
-        result = "{:.2f}".format(float(right_operand) - float(left_operand))
+        if "+" in current_value:
+            right_operand, left_operand = current_value.split(sep="+")
+            result = "{:.2f}".format(float(right_operand) + float(left_operand))
+        elif "-" in current_value:
+            right_operand, left_operand = current_value.split(sep="-")
+            result = "{:.2f}".format(float(right_operand) - float(left_operand))
+        elif "*" in current_value:
+            right_operand, left_operand = current_value.split(sep="*")
+            result = "{:.2f}".format(float(right_operand) * float(left_operand))
+        elif "/" in current_value:
+            right_operand, left_operand = current_value.split(sep="/")
+            result = "{:.2f}".format(float(right_operand) / float(left_operand))
         self.input_field.delete(0, END)
         self.input_field.insert(0, result)
 
