@@ -9,6 +9,9 @@ def main():
     print("Difference another way:", set2 - set1)
     print("Difference between second and first set:", set2.difference(set1))
 
+    print("Union:", set2.union(set1))
+    print("Intersections:", set2.intersection(set1))
+
 
 if __name__ == "__main__":
     main()
