@@ -93,6 +93,9 @@ class SimpleCalculator(Tk):
                 return
             else:
                 result = "{:.2f}".format(float(right_operand) / float(left_operand))
+        # check field is empty?
+        elif current_value == "":
+            return
         self.input_field.delete(0, END)
         self.input_field.insert(0, result)
 
