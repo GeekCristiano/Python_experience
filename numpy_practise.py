@@ -6,7 +6,7 @@ def square(x):
     return x * x
 
 
-def main():
+def d2plot():
     x = np.linspace(0, 11, 100)
     y = square(x)
     print("numpy.size", x.size)
@@ -22,6 +22,10 @@ def main():
     plt.xlim(-11, 11)
     plt.ylim(0, 121)
     plt.show()
+
+
+def main():
+    d2plot()
 
 
 if __name__ == "__main__":
