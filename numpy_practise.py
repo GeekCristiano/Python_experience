@@ -9,6 +9,10 @@ def square(x):
 def main():
     x = np.linspace(0, 11, 100)
     y = square(x)
+    print("numpy.size", x.size)
+    print("numpy.shape", x.shape)
+    print("numpy.itemsize", x.itemsize)
+    print("numpy.ndim", x.ndim)
     plt.plot(x, y, "r")
     plt.plot(-x, y, 'b')
     plt.xlabel("X-axis")
