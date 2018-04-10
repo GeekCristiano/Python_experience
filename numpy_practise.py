@@ -1,9 +1,31 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
 
 
 def square(x):
     return x * x
+
+
+def d3plot():
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    phi = np.arange(0, 2 * np.pi, np.pi/1000)
+    th = np.arange(0, np.pi, np.pi/1000)
+    r = 3
+
+    phiGrid, thGrid = np.meshgrid(phi, th)
+
+    x = r * np.sin(thGrid) * np.cos(phiGrid)
+    y = r * np.sin(thGrid) * np.sin(phiGrid)
+    z = r * np.cos(thGrid)
+
+    ax.plot_surface(x, y, z,cmap="inferno")
+    ax.set_xlabel("X axis")
+    ax.set_ylabel("Y axis")
+    ax.set_zlabel("Z axis")
+    ax.set_title("It's sphere")
+    plt.show()
 
 
 def d2plot():
@@ -25,7 +47,8 @@ def d2plot():
 
 
 def main():
-    d2plot()
+    # d2plot()
+    d3plot()
 
 
 if __name__ == "__main__":
