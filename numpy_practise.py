@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.cm as cm
 
 
 def square(x):
@@ -25,6 +26,12 @@ def d3plot():
     ax.set_ylabel("Y axis")
     ax.set_zlabel("Z axis")
     ax.set_title("It's sphere")
+
+    m = cm.ScalarMappable(cmap=cm.jet)
+    m.set_array(z)
+    plt.colorbar(m)
+
+
     plt.show()
 
 
