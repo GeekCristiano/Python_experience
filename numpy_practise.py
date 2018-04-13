@@ -8,7 +8,7 @@ def square(x):
     return x * x
 
 
-def d3plot():
+def plot_sphere():
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
     phi = np.arange(0, 2 * np.pi, np.pi/1000)
@@ -35,7 +35,7 @@ def d3plot():
     plt.show()
 
 
-def d2plot():
+def plot_parabola():
     x = np.linspace(0, 11, 100)
     y = square(x)
     print("numpy.size", x.size)
@@ -54,8 +54,8 @@ def d2plot():
 
 
 def main():
-    # d2plot()
-    d3plot()
+    # plot_parabola()
+    plot_sphere()
 
 
 if __name__ == "__main__":
