@@ -53,9 +53,23 @@ def plot_parabola():
     plt.show()
 
 
+def plot_many_lines():
+
+    x = np.arange(-2*np.pi, 2*np.pi, np.pi/10)
+    y1 = np.sin(x)
+    y2 = np.cos(x)
+    plt.figure(1)
+    plt.subplot(211)
+    line = plt.plot(x,y1)
+    plt.setp(line, color='r', linewidth=2.0,marker=".",ms='8')
+    plt.subplot(212)
+    plt.plot(x,y2,"--b+")
+    plt.show()
+
 def main():
+    plot_many_lines()
     # plot_parabola()
-    plot_sphere()
+    # plot_sphere()
 
 
 if __name__ == "__main__":
