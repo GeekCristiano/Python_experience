@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.cm as cm
-
+import matplotlib.animation as animation
 
 def square(x):
     return x * x
@@ -67,10 +67,22 @@ def plot_many_lines():
     plt.plot(x,y2,"--b+")
     plt.show()
 
+def animated_line():
+
+    fig, ax = plt.subplots()
+
+    x = np.arange(0,2*np.pi,0.01)
+    line = ax.plot(x, np.sin(x))
+
+
+    plt.show()
+
+
 def main():
-    plot_many_lines()
+    # plot_many_lines()
     # plot_parabola()
     # plot_sphere()
+    animated_line()
 
 
 if __name__ == "__main__":
