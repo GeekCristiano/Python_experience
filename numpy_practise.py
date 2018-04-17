@@ -76,6 +76,7 @@ def animated_line():
     ani = animation.FuncAnimation(fig, lambda i: line.set_ydata(np.sin(x + i / 10.0)), np.arange(1, 200),
                                   interval=25, blit=True)
 
+    plt.title("animation line")
     plt.show()
 
 
