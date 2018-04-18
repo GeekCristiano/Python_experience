@@ -63,6 +63,7 @@ def plot_many_lines():
     plt.setp(line, color='r', linewidth=2.0, marker=".", ms='8')
     plt.title("$sin(x)$")
     plt.subplot(212)
+    # set style with third argument of plot function or using setp method
     plt.plot(x, y2, "--b+")
     plt.show()
 
