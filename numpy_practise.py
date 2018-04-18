@@ -62,7 +62,9 @@ def plot_many_lines():
     line = plt.plot(x, y1)
     plt.setp(line, color='r', linewidth=2.0, marker=".", ms='8')
     plt.title("$sin(x)$")
-    plt.subplot(212)
+    l2= plt.subplot(212)
+    # add title for second subplot
+    l2.set_title("$cos(x)$")
     # set style with third argument of plot function or using setp method
     plt.plot(x, y2, "--b+")
     plt.show()
@@ -82,10 +84,10 @@ def animated_line():
 
 
 def main():
-    # plot_many_lines()
+    plot_many_lines()
     # plot_parabola()
     # plot_sphere()
-    animated_line()
+    # animated_line()
 
 
 if __name__ == "__main__":
