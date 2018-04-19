@@ -84,7 +84,8 @@ def animated_line():
 
 
 def main():
-    plot_many_lines()
+    print("I do not have time to study this scripting language after work. It is very sad :(")
+    # plot_many_lines()
     # plot_parabola()
     # plot_sphere()
     # animated_line()
