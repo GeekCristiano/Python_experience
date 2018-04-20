@@ -7,12 +7,6 @@ class car():
     def stop(self):
         print("Car stops.")
 
-
-mycar = car()
-mycar.drive("50")
-mycar.stop()
-
-
 # inheritance example
 class jaguarCar(car):
     def sound(self):
@@ -20,13 +14,6 @@ class jaguarCar(car):
 
     def stop(self):
         print("Jaguar stops.")
-
-
-jaguarCar = jaguarCar()
-jaguarCar.drive("140")
-jaguarCar.stop()
-jaguarCar.sound()
-
 
 class User():
     # Constructor of object
@@ -38,5 +25,22 @@ class User():
         print("My name: %s" % self.name)
         print("I am %d years old" % self.age)
 
-user= User("Bob", 27)
-user.printUser()
+    def __str__(self):
+        return "User object"
+
+
+def main():
+    mycar = car()
+    mycar.drive("50")
+    mycar.stop()
+    jaguarcar = jaguarCar()
+    jaguarcar.drive("140")
+    jaguarcar.stop()
+    jaguarcar.sound()
+
+    user= User("Bob", 27)
+    user.printUser()
+    print(user)
+
+if __name__=="__main__":
+    main()
