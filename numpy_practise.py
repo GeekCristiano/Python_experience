@@ -83,12 +83,13 @@ def animated_line():
     plt.show()
 
 
+
 def main():
-    print("I do not have time to study this scripting language after work. It is very sad :(")
-    # plot_many_lines()
-    # plot_parabola()
-    # plot_sphere()
-    # animated_line()
+    # jpg extension isn't supporting by default therefore using PNG
+    cat_image = plt.imread("cat.png")
+    # print info about image file
+    print(cat_image.shape)
+
 
 
 if __name__ == "__main__":
