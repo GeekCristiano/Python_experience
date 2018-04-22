@@ -3,7 +3,7 @@ import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.cm as cm
 import matplotlib.animation as animation
-
+import cv2
 
 def square(x):
     return x * x
@@ -90,7 +90,11 @@ def main():
     # print info about image file
     print(cat_image.shape)
 
-
+# using opencv library to render image
+    image = cv2.imread("cat.png", 0)
+    cv2.imshow('image', image)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
 if __name__ == "__main__":
     main()
